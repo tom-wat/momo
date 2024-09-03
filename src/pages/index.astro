@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
 ---
 
 <Layout
@@ -7,6 +8,43 @@ import Layout from "../layouts/Layout.astro";
   description="ミヒャエル・エンデの小説「モモ」を紹介するサイトです。"
 >
   <body>
-    <h1>Momo</h1>
+    <main class="main">
+      <h1>Momo</h1>
+    </main>
   </body>
 </Layout>
+
+<style>
+  main {
+    display: grid;
+    place-content: center;
+    height: 100svh;
+    background-image: url("/momo/images/paper.png");
+    position: relative;
+  }
+  main::before {
+    content: "";
+    display: block;
+    background-image: url("/momo/images/decoration-line.svg");
+    background-repeat: repeat-y;
+    mix-blend-mode: multiply;
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 20vw;
+  }
+  main::after {
+    content: "";
+    display: block;
+    background-image: url("/momo/images/decoration-line.svg");
+    background-repeat: repeat-y;
+    mix-blend-mode: multiply;
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 20vw;
+    transform: rotate(180deg);
+  }
+</style>
