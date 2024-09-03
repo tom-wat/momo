@@ -8,7 +8,12 @@ import "../styles/global.css";
   description="ミヒャエル・エンデの小説「モモ」を紹介するサイトです。"
 >
   <body>
+    <div class="image-wrapper">
+      <img class="cover" src="/momo/images/cover.avif" alt="" />
+    </div>
+
     <main class="main">
+      <img class="decoration" src="/momo/images/text-decoration.svg" alt="" />
       <h1>Momo</h1>
     </main>
   </body>
@@ -17,8 +22,8 @@ import "../styles/global.css";
 <style>
   main {
     display: grid;
+    min-height: 100svh;
     place-content: center;
-    height: 100svh;
     background-image: url("/momo/images/paper.png");
     position: relative;
   }
@@ -46,5 +51,24 @@ import "../styles/global.css";
     top: 0;
     right: 20vw;
     transform: rotate(180deg);
+  }
+  h1 {
+    text-align: center;
+  }
+  .image-wrapper {
+    min-height: 100svh;
+    position: relative;
+    background-color: black;
+    & img {
+      position: absolute;
+      width: 100%;
+      height: 100svh;
+      object-fit: cover;
+    }
+  }
+  .decoration {
+    width: 250px;
+    margin: 0 auto;
+    mix-blend-mode: multiply;
   }
 </style>
