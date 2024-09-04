@@ -160,7 +160,7 @@ const transitionTime = "1s";
 
 <style define:vars={{ transitionTime }}>
   .image-wrapper {
-    min-height: 100svh;
+    min-height: 100lvh;
     position: relative;
     background-color: white;
     position: sticky;
@@ -170,15 +170,6 @@ const transitionTime = "1s";
       width: 100%;
       height: 100svh;
       object-fit: cover;
-      opacity: 0;
-      filter: blur(100px);
-      transition:
-        opacity var(--transitionTime),
-        filter var(--transitionTime);
-    }
-    & .cover.loaded {
-      opacity: 1;
-      filter: blur(0px);
     }
   }
   .decoration {

@@ -65,13 +65,6 @@ main {
   background-image: url("/momo/images/paper.png");
   position: relative;
   padding-block: 4rem;
-  opacity: 0;
-  filter: blur(100px);
-  transition: opacity var(--transitionTime), filter var(--transitionTime);
-  &.loaded {
-    opacity: 1;
-    filter: blur(0px);
-  }
 }
 main::before {
   content: "";
@@ -83,7 +76,7 @@ main::before {
   height: 100%;
   position: absolute;
   top: 0;
-  left: 20vw;
+  left: 15vw;
 }
 main::after {
   content: "";
@@ -95,7 +88,7 @@ main::after {
   height: 100%;
   position: absolute;
   top: 0;
-  right: 20vw;
+  right: 15vw;
   transform: rotate(180deg);
 }
 img {

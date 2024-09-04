@@ -16,12 +16,11 @@
     background-color: hsl(45, 27%, 98%);
     z-index: 9999;
     opacity: 1;
-    /* transition: opacity 0.3s ease-out; */
+    transition: opacity 1s ease-out;
   }
 
   .loading-screen.fade-out {
     opacity: 0;
-    display: none;
   }
 
   .picture-wrapper {
@@ -44,9 +43,6 @@
 
     function hideLoadingScreen() {
       loadingScreen.classList.add("fade-out");
-      cover.classList.add("loaded");
-      main.classList.add("loaded");
-      body.style.overflow = "auto";
       // requestAnimationFrame(() => {
       //   loadingScreen.classList.add("fade-out");
       // });
@@ -68,10 +64,8 @@
     window.addEventListener("load", hideLoadingScreen);
 
     loadingScreen.addEventListener("transitionend", () => {
-      loadingScreen.style.display = "none";
-      cover.classList.add("loaded");
-      main.classList.add("loaded");
       body.style.overflow = "auto";
+      loadingScreen.style.display = "none";
     });
   });
 </script>
