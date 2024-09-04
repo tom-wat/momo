@@ -1,6 +1,8 @@
 ---
+import Loading from "../components/Loading.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
+const transitionTime = "1s";
 ---
 
 <Layout
@@ -8,6 +10,7 @@ import "../styles/global.css";
   description="ミヒャエル・エンデの小説「モモ」を紹介するサイトです。"
 >
   <body>
+    <Loading />
     <div class="image-wrapper">
       <img class="cover" src="/momo/images/cover.avif" alt="" />
     </div>
@@ -19,13 +22,22 @@ import "../styles/global.css";
   </body>
 </Layout>
 
-<style>
+<style define:vars={{ transitionTime }}>
   main {
     display: grid;
     min-height: 100svh;
     place-content: center;
     background-image: url("/momo/images/paper.png");
     position: relative;
+    opacity: 0;
+    filter: blur(100px);
+    transition:
+      opacity var(--transitionTime),
+      filter var(--transitionTime);
+    &.loaded {
+      opacity: 1;
+      filter: blur(0px);
+    }
   }
   main::before {
     content: "";
@@ -58,12 +70,21 @@ import "../styles/global.css";
   .image-wrapper {
     min-height: 100svh;
     position: relative;
-    background-color: black;
-    & img {
+    background-color: white;
+    & .cover {
       position: absolute;
       width: 100%;
       height: 100svh;
       object-fit: cover;
+      opacity: 0;
+      filter: blur(100px);
+      transition:
+        opacity var(--transitionTime),
+        filter var(--transitionTime);
+    }
+    & .cover.loaded {
+      opacity: 1;
+      filter: blur(0px);
     }
   }
   .decoration {

@@ -1,0 +1,76 @@
+---
+
+---
+
+<div class="loading-screen">
+  <div class="picture-wrapper"></div>
+</div>
+
+<style>
+  .loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(45, 27%, 98%);
+    z-index: 9999;
+    opacity: 1;
+    /* transition: opacity 0.3s ease-out; */
+  }
+
+  .loading-screen.fade-out {
+    opacity: 0;
+  }
+
+  .picture-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const body = document.querySelector("body");
+    const main = document.querySelector("main");
+    const cover = document.querySelector(".cover");
+    const loadingScreen = document.querySelector(
+      ".loading-screen"
+    ) as HTMLElement;
+    // let startTime = performance.now();
+
+    function hideLoadingScreen() {
+      loadingScreen.classList.add("fade-out");
+      cover.classList.add("loaded");
+      main.classList.add("loaded");
+      body.style.overflow = "auto";
+      // requestAnimationFrame(() => {
+      //   loadingScreen.classList.add("fade-out");
+      // });
+    }
+
+    // function checkCacheAndHide() {
+    //   const loadTime = performance.now() - startTime;
+    //   const isCached = loadTime < 200; // 200ミリ秒未満の場合、キャッシュされていると仮定
+
+    //   if (isCached) {
+    //     // キャッシュがある場合、短い遅延を設定
+    //     setTimeout(hideLoadingScreen, 200);
+    //   } else {
+    //     // キャッシュがない場合、より長い遅延を設定
+    //     setTimeout(hideLoadingScreen, 800);
+    //   }
+    // }
+
+    window.addEventListener("load", hideLoadingScreen);
+
+    loadingScreen.addEventListener("transitionend", () => {
+      loadingScreen.style.display = "none";
+      cover.classList.add("loaded");
+      main.classList.add("loaded");
+      body.style.overflow = "auto";
+    });
+  });
+</script>
