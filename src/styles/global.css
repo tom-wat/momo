@@ -63,6 +63,46 @@ body {
   overflow: hidden;
   font-family: "shippori mincho b1", serif;
 }
+main {
+  border-radius: 3rem 3rem 0 0;
+  display: grid;
+  place-content: center;
+  background-image: url("/momo/images/paper.png");
+  position: relative;
+  padding-block: 4rem;
+  opacity: 0;
+  filter: blur(100px);
+  transition: opacity var(--transitionTime), filter var(--transitionTime);
+  &.loaded {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+main::before {
+  content: "";
+  display: block;
+  background-image: url("/momo/images/decoration-line.svg");
+  background-repeat: repeat-y;
+  mix-blend-mode: multiply;
+  width: 50px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 20vw;
+}
+main::after {
+  content: "";
+  display: block;
+  background-image: url("/momo/images/decoration-line.svg");
+  background-repeat: repeat-y;
+  mix-blend-mode: multiply;
+  width: 50px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 20vw;
+  transform: rotate(180deg);
+}
 img {
   vertical-align: bottom;
 }
@@ -86,6 +126,17 @@ button {
   padding: 0.5rem 1rem;
   width: max-content;
   border-radius: 5rem;
+}
+section {
+  display: grid;
+  place-content: center;
+  margin-block: 6rem;
+}
+
+footer {
+  display: grid;
+  place-content: center;
+  margin-block: 12rem;
 }
 .margin-inline-auto {
   margin-inline: auto;
