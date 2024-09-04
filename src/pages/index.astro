@@ -11,19 +11,25 @@ const transitionTime = "1s";
 >
   <body>
     <Loading />
-    <div class="image-wrapper">
-      <img class="cover" src="/momo/images/cover.avif" alt="" />
-    </div>
+    <div class="contaigner">
+      <div class="image-wrapper">
+        <img class="cover" src="/momo/images/cover.avif" alt="" />
+      </div>
 
-    <main class="main">
-      <img class="decoration" src="/momo/images/text-decoration.svg" alt="" />
-      <h1>Momo</h1>
-    </main>
+      <main class="main">
+        <img class="decoration" src="/momo/images/text-decoration.svg" alt="" />
+        <h2>「モモ」とは？</h2>
+        <p>
+          「モモ」は、ドイツの児童文学作家ミヒャエル・エンデが1973年に発表したファンタジー小説です。この作品は、「時間」という概念を深く洞察し、現代社会にも通じる普遍的なテーマを探求しています。
+        </p>
+      </main>
+    </div>
   </body>
 </Layout>
 
 <style define:vars={{ transitionTime }}>
   main {
+    border-radius: 3rem 3rem 0 0;
     display: grid;
     min-height: 100svh;
     place-content: center;
@@ -64,13 +70,12 @@ const transitionTime = "1s";
     right: 20vw;
     transform: rotate(180deg);
   }
-  h1 {
-    text-align: center;
-  }
   .image-wrapper {
     min-height: 100svh;
     position: relative;
     background-color: white;
+    position: sticky;
+    top: 0;
     & .cover {
       position: absolute;
       width: 100%;
@@ -91,5 +96,15 @@ const transitionTime = "1s";
     width: 250px;
     margin: 0 auto;
     mix-blend-mode: multiply;
+    margin-bottom: 2rem;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 6rem;
+  }
+  p {
+    text-align: left;
+    max-width: 60ch;
+    line-height: 2;
   }
 </style>
