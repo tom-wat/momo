@@ -1,5 +1,6 @@
 :root {
   --color-accent: hsl(340, 100%, 40%);
+  --color-black: hsl(50, 7%, 25%);
   --clamp-viewport-min: 320;
   --clamp-viewport-max: 767;
   --clamp-min: 14;
@@ -116,7 +117,9 @@ li {
 button {
   font-family: "shippori mincho b1", serif;
   background-color: transparent;
-  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-black);
+  outline: none;
+  box-shadow: none;
   width: max-content;
   border-radius: 5rem;
 }
@@ -130,6 +133,19 @@ footer {
   display: grid;
   place-content: center;
   margin-block: 12rem;
+}
+a {
+  border-radius: 5rem;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  color: black;
+  transition: color 0.3s, background-color 0.3s;
+  @media (any-hover: hover) {
+    &:hover {
+      color: white;
+      background-color: var(--color-black);
+    }
+  }
 }
 .margin-inline-auto {
   margin-inline: auto;
