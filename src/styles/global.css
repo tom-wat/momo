@@ -66,3 +66,48 @@ body {
 img {
   vertical-align: bottom;
 }
+h2 {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+p {
+  max-width: 60ch;
+  line-height: 2;
+}
+li {
+  text-align: center;
+  &:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+}
+button {
+  font-family: "shippori mincho b1", serif;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  width: max-content;
+  border-radius: 5rem;
+}
+.margin-inline-auto {
+  margin-inline: auto;
+}
+.margin-bottom-s {
+  margin-bottom: 2rem;
+}
+.margin-bottom-m {
+  margin-bottom: 4rem;
+}
+.margin-bottom-l {
+  margin-bottom: 6rem;
+}
+.text-center {
+  text-align: center;
+}
+.font-size-s {
+  font-size: 0.8rem;
+}
+.font-size-l {
+  font-size: 1.4rem;
+}
+.line-height-l {
+  line-height: 3.6rem;
+}
