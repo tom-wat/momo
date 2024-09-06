@@ -2,7 +2,7 @@
 import Loading from "../components/Loading.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
-const transitionTime = "1s";
+const transitionTime = "1.5s";
 ---
 
 <Layout
@@ -13,7 +13,7 @@ const transitionTime = "1s";
     <Loading />
     <div class="contaigner">
       <div class="image-wrapper">
-        <img class="title" src="/momo/images/title.svg" alt="" />
+        <img class="title" src="/momo/images/title.avif" alt="" />
         <img class="cover" src="/momo/images/cover.avif" alt="" />
       </div>
 
@@ -163,15 +163,14 @@ const transitionTime = "1s";
   .image-wrapper {
     min-height: 100lvh;
     position: relative;
-    background-color: white;
     position: sticky;
     top: 0;
-    & .cover {
-      position: absolute;
-      width: 100%;
-      height: 100lvh;
-      object-fit: cover;
-    }
+  }
+  .cover {
+    position: absolute;
+    width: 100%;
+    height: 100lvh;
+    object-fit: cover;
   }
   .title {
     position: absolute;

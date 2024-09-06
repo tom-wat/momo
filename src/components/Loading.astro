@@ -2,9 +2,8 @@
 
 ---
 
-<div class="loading-screen">
-  <div class="picture-wrapper"></div>
-</div>
+<div class="loading-screen"></div>
+<img class="loading-title" src="/momo/images/title-white.avif" alt="" />
 
 <style>
   .loading-screen {
@@ -13,36 +12,48 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: hsl(45, 27%, 98%);
-    z-index: 9999;
+    background-color: hsl(30, 100%, 50%);
+    z-index: 10;
     opacity: 1;
-    transition: opacity 1s ease-out;
+    transition: transform 0.3s ease-in-out;
   }
 
-  .loading-screen.fade-out {
-    opacity: 0;
+  .loading-screen.loaded {
+    transform: translateY(-100%);
   }
 
-  .picture-wrapper {
-    position: absolute;
-    top: 50%;
+  .loading-title {
+    position: fixed;
+    width: 96%;
+    z-index: 20;
+    top: 54%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: opacity 0.5s;
+    &.loaded {
+      opacity: 0;
+    }
   }
 </style>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const body = document.querySelector("body");
-    const main = document.querySelector("main");
-    const cover = document.querySelector(".cover");
+    const loadingTitle = document.querySelector(
+      ".loading-title"
+    ) as HTMLElement;
+
     const loadingScreen = document.querySelector(
       ".loading-screen"
     ) as HTMLElement;
     // let startTime = performance.now();
 
     function hideLoadingScreen() {
-      loadingScreen.classList.add("fade-out");
+      loadingScreen.classList.add("loaded");
+      loadingTitle.classList.add("loaded");
+      // cover.classList.add("loaded");
+      // title.classList.add("loaded");
+
       // requestAnimationFrame(() => {
       //   loadingScreen.classList.add("fade-out");
       // });
@@ -66,6 +77,9 @@
     loadingScreen.addEventListener("transitionend", () => {
       body.style.overflow = "auto";
       loadingScreen.style.display = "none";
+    });
+    loadingTitle.addEventListener("transitionend", () => {
+      loadingTitle.style.display = "none";
     });
   });
 </script>
