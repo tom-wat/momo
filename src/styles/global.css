@@ -71,6 +71,7 @@ main {
   background-image: url("/momo/images/paper.png");
   position: relative;
   padding-block: 4rem;
+  z-index: 100;
 }
 main::before {
   content: "";
