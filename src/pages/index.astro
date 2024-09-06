@@ -6,13 +6,14 @@ const transitionTime = "1s";
 ---
 
 <Layout
-  title="小説「モモ」紹介アンオフィシャルサイト"
+  title="小説「モモ」紹介サイト"
   description="ミヒャエル・エンデの小説「モモ」を紹介するアンオフィシャルサイトです。"
 >
   <body>
     <Loading />
     <div class="contaigner">
       <div class="image-wrapper">
+        <img class="title" src="/momo/images/title.svg" alt="" />
         <img class="cover" src="/momo/images/cover.avif" alt="" />
       </div>
 
@@ -171,6 +172,14 @@ const transitionTime = "1s";
       height: 100lvh;
       object-fit: cover;
     }
+  }
+  .title {
+    position: absolute;
+    width: 96%;
+    z-index: 10;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   .decoration {
     width: 250px;
