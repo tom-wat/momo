@@ -31,7 +31,6 @@ body {
 }
 main {
   background-color: hsl(45 100% 90%);
-  border-radius: 3rem 3rem 0 0;
   display: grid;
   place-content: center;
   background-image: url("/momo/images/paper.png");
@@ -43,6 +42,7 @@ main {
     background-size: 200px 200px;
   }
   @media (min-width: 1025px) {
+    border-radius: 3rem 3rem 0 0;
     background-size: 400px 400px;
   }
 }
