@@ -23,6 +23,13 @@ import "../styles/global.css";
             type="image/avif"
           />
           <source
+            media="(min-width: 768px) and (max-width: 1024px) and (orientation: landscape)"
+            srcset="/momo/images/cover-pc.avif"
+            sizes="100vw"
+            type="image/avif"
+          />
+          <source
+            media="(min-width: 768px) and (max-width: 1024px) and (orientation: portrait)"
             media="(min-width: 768px)"
             srcset="/momo/images/cover-tab.avif"
             type="image/avif"
@@ -47,7 +54,13 @@ import "../styles/global.css";
             type="image/avif"
           />
           <source
-            media="(min-width: 768px)"
+            media="(min-width: 768px) and (max-width: 1024px) and (orientation: landscape)"
+            srcset="/momo/images/title-pc.avif"
+            sizes="100vw"
+            type="image/avif"
+          />
+          <source
+            media="(min-width: 768px) and (max-width: 1024px) and (orientation: portrait)"
             srcset="/momo/images/title-tab.avif"
             type="image/avif"
             width="1651"
@@ -247,8 +260,12 @@ import "../styles/global.css";
     bottom: 12.5%;
     left: 50%;
     transform: translate(-50%, 0%);
-    @media (min-width: 768px) {
+    @media (min-width: 768px) and (orientation: portrait) {
       bottom: 5%;
+    }
+    @media (min-width: 768px) and (orientation: landscape) {
+      top: 54%;
+      transform: translate(-50%, -50%);
     }
     @media (min-width: 1025px) {
       top: 54%;
