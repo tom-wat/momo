@@ -5,15 +5,61 @@ import "../styles/global.css";
 ---
 
 <Layout
-  title="小説「モモ」紹介サイト"
+  title="小説「モモ」アンオフィシャル紹介サイト"
   description="ミヒャエル・エンデの小説「モモ」を紹介するアンオフィシャルサイトです。"
 >
   <body>
     <Loading />
     <div class="contaigner">
       <div class="image-wrapper">
-        <img class="title" src="/momo/images/title.avif" alt="" />
-        <img class="cover" src="/momo/images/cover.avif" alt="" />
+        <picture class="cover">
+          <source
+            media="(min-width: 1025px)"
+            srcset="/momo/images/cover-pc.avif"
+            sizes="100vw"
+            type="image/avif"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="/momo/images/cover-tab.avif"
+            type="image/avif"
+          />
+          <source
+            media="(max-width: 767px)"
+            srcset="/momo/images/cover-sp.avif"
+            type="image/avif"
+          />
+          <img
+            src="/momo/images/cover-pc.avif"
+            alt="中央にモモの横顔のシルエットが描かれた時計の画像"
+            width="4000"
+            height="2250"
+          />
+        </picture>
+        <picture class="title">
+          <source
+            media="(min-width: 1025px)"
+            srcset="/momo/images/title-pc.avif"
+            sizes="100vw"
+            type="image/avif"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="/momo/images/title-tab.avif"
+            type="image/avif"
+          />
+          <source
+            media="(max-width: 767px)"
+            srcset="/momo/images/title-sp.avif"
+            type="image/avif"
+          />
+          <img
+            src="/momo/images/title-pc.avif"
+            alt="タイトル、モモ"
+            width="3832"
+            height="740"
+          />
+        </picture>
       </div>
 
       <main class="main">
@@ -164,19 +210,27 @@ import "../styles/global.css";
     position: sticky;
     top: 0;
   }
-  .cover {
+  .cover img {
     position: absolute;
     width: 100%;
     height: 100svh;
     object-fit: cover;
   }
-  .title {
+  .title img {
     position: absolute;
     width: 96%;
+    height: auto;
     z-index: 10;
-    top: 54%;
+    bottom: 15%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0%);
+    @media (min-width: 768px) {
+      bottom: 5%;
+    }
+    @media (min-width: 1025px) {
+      top: 54%;
+      transform: translate(-50%, -50%);
+    }
   }
   .decoration {
     width: 250px;
