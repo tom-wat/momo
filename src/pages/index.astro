@@ -63,6 +63,8 @@ import "../styles/global.css";
       </div>
 
       <main class="main">
+        <div class="decoration-left"></div>
+        <div class="decoration-right"></div>
         <section id="table-of-contents" class="table-of-contents">
           <h2>もくじ</h2>
           <ul>
@@ -86,14 +88,20 @@ import "../styles/global.css";
             >です。この作品は、<span class="accent">「時間」</span
             >という概念を深く洞察し、現代社会にも通じる普遍的なテーマを探求しています。
           </p>
-          <p class="text-center margin-bottom-m line-height-l">
-            <span class="accent">時間の本質</span
-            >とは何か？私たちは時間をどう捉え、使うべきか？<br />
-            忙しさに追われる現代人の生き方への問いかけ<br />
-            <span class="accent">「時間を節約する」</span
-            >ことの真の意味と、その落とし穴<br />
-            <span class="accent">「いま」</span>を十分に生きることの価値
-          </p>
+          <ul class="text-center margin-bottom-m">
+            <li>
+              <span class="accent">時間の本質</span
+              >とは何か？私たちは時間をどう捉え、使うべきか？
+            </li>
+            <li>忙しさに追われる現代人の生き方への問いかけ</li>
+            <li>
+              <span class="accent">「時間を節約する」</span
+              >ことの真の意味と、その落とし穴
+            </li>
+            <li>
+              <span class="accent">「いま」</span>を十分に生きることの価値
+            </li>
+          </ul>
           <p>
             ⠀これらのテーマが、魅力的なストーリーを通じて描かれ、世界中の読者を魅了しています。「モモ」はさまざまな言語に翻訳され、文化や年齢を超えて、子どもから大人まで幅広い読者に愛され続けている現代の名作です。時代が変わっても色褪せない<span
               class="accent">「時間」</span
@@ -193,8 +201,8 @@ import "../styles/global.css";
             ></button
           >
           <div class="disclaimer">
-            <p class="text-center font-size-s margin-bottom-s">免責事項</p>
-            <p class="font-size-s">
+            <p class="text-center margin-bottom-s">免責事項</p>
+            <p>
               このウェブサイトは、個人によって作成された非公式なサイトです。本サイトは、作者、出版社、またはその他の権利所有者とは一切関係がありません。ここで提供される情報は、個人の解釈と鑑賞に基づくものであり、公式情報とは異なる場合があります。「モモ」およびそれに関連するすべての知的財産権は、それぞれの所有者に帰属します。
             </p>
           </div>
@@ -221,7 +229,7 @@ import "../styles/global.css";
     width: 96%;
     height: auto;
     z-index: 10;
-    bottom: 15%;
+    bottom: 12.5%;
     left: 50%;
     transform: translate(-50%, 0%);
     @media (min-width: 768px) {
@@ -232,14 +240,65 @@ import "../styles/global.css";
       transform: translate(-50%, -50%);
     }
   }
+  .decoration-left {
+    background-image: url(/momo/images/decoration-line.svg);
+    background-repeat: repeat-y;
+    mix-blend-mode: multiply;
+    width: 50px;
+    height: 100%;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0px;
+    @media (min-width: 768px) {
+      display: block;
+      width: 40px;
+      left: 10vw;
+    }
+    @media (min-width: 1025px) {
+      width: 50px;
+      left: 15vw;
+    }
+  }
+  .decoration-right {
+    background-image: url(/momo/images/decoration-line.svg);
+    background-repeat: repeat-y;
+    transform: rotate(180deg);
+    mix-blend-mode: multiply;
+    display: none;
+    width: 0px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    @media (min-width: 768px) {
+      display: block;
+      width: 40px;
+      right: 10vw;
+    }
+    @media (min-width: 1025px) {
+      width: 50px;
+      right: 15vw;
+    }
+  }
   .decoration {
-    width: 250px;
+    width: 150px;
     margin: 0 auto;
     mix-blend-mode: multiply;
     margin-bottom: 2rem;
+    @media (min-width: 768px) {
+      width: 200px;
+    }
+    @media (min-width: 1025px) {
+      width: 250px;
+    }
   }
   .disclaimer {
     margin-top: 12rem;
+    & p {
+      font-size: 0.8rem;
+    }
   }
   .accent {
     color: var(--color-accent);

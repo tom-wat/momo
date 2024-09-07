@@ -2,10 +2,6 @@
   --color-accent: hsl(340, 100%, 40%);
   --color-dark: hsl(50, 7%, 25%);
   --color-light: hsl(50, 90%, 90%);
-  --clamp-viewport-min: 320;
-  --clamp-viewport-max: 767;
-  --clamp-min: 14;
-  --clamp-max: 16;
 }
 /* @font-face {
   font-family: "shippori mincho b1";
@@ -28,94 +24,69 @@
   list-style: none;
   box-sizing: border-box;
   text-decoration: none;
-
-  --clamp-root-font-size: 16;
-
-  --clamp-slope: calc(
-    (var(--clamp-max) - var(--clamp-min)) /
-      (var(--clamp-viewport-max) - var(--clamp-viewport-min))
-  );
-  --clamp-intersect: calc(
-    var(--clamp-max) - (var(--clamp-slope) * var(--clamp-viewport-max))
-  );
-  --clamp-variable: calc(
-    var(--clamp-intersect) * (1rem / var(--clamp-root-font-size)) +
-      (var(--clamp-slope) * 100vw)
-  );
-  --clamp: clamp(
-    calc(var(--clamp-min) * (1rem / var(--clamp-root-font-size))),
-    var(--clamp-variable),
-    calc(var(--clamp-max) * (1rem / var(--clamp-root-font-size)))
-  );
-}
-@media (min-width: 768px) {
-  :root {
-    --clamp-viewport-min: 768;
-    --clamp-viewport-max: 1024;
-  }
-}
-@media (min-width: 1025px) {
-  :root {
-    --clamp-viewport-min: 1280;
-    --clamp-viewport-max: 2560;
-  }
 }
 body {
   overflow: hidden;
   font-family: "shippori mincho b1", serif;
 }
 main {
+  background-color: hsl(45 100% 90%);
   border-radius: 3rem 3rem 0 0;
   display: grid;
   place-content: center;
   background-image: url("/momo/images/paper.png");
+  background-size: 200px 200px;
   position: relative;
-  padding-block: 4rem;
+  padding: 4rem 1rem;
   z-index: 100;
-}
-main::before {
-  content: "";
-  display: block;
-  background-image: url("/momo/images/decoration-line.svg");
-  background-repeat: repeat-y;
-  mix-blend-mode: multiply;
-  width: 50px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 15vw;
-}
-main::after {
-  content: "";
-  display: block;
-  background-image: url("/momo/images/decoration-line.svg");
-  background-repeat: repeat-y;
-  mix-blend-mode: multiply;
-  width: 50px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  right: 15vw;
-  transform: rotate(180deg);
+  @media (min-width: 768px) {
+    background-size: 200px 200px;
+  }
+  @media (min-width: 1025px) {
+    background-size: 400px 400px;
+  }
 }
 img {
   vertical-align: bottom;
 }
 h2 {
+  font-size: 1.2rem;
+  font-weight: normal;
   text-align: center;
   margin-bottom: 6rem;
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+  }
+  @media (min-width: 1025px) {
+    font-size: 1.8rem;
+  }
 }
 p {
+  font-size: 0.9rem;
   max-width: 60ch;
   line-height: 2;
+  @media (min-width: 768px) {
+    font-size: 1.1rem;
+  }
+  @media (min-width: 1025px) {
+    font-size: 1.2rem;
+  }
 }
 li {
+  font-size: 0.9rem;
   text-align: center;
   &:not(:last-child) {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
+  }
+  @media (min-width: 768px) {
+    font-size: 1.1rem;
+  }
+  @media (min-width: 1025px) {
+    font-size: 1.2rem;
   }
 }
 button {
+  font-size: 1.2rem;
   font-family: "shippori mincho b1", serif;
   background-color: transparent;
   border: 1px solid var(--color-dark);
@@ -138,7 +109,7 @@ footer {
 a {
   border-radius: 5rem;
   display: inline-block;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1.5rem;
   color: black;
   transition: color 0.2s, background-color 0.2s;
   @media (any-hover: hover) {
@@ -163,11 +134,14 @@ a {
 .text-center {
   text-align: center;
 }
-.font-size-s {
-  font-size: 0.8rem;
-}
 .font-size-l {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
+  @media (min-width: 768px) {
+    font-size: 1.2rem;
+  }
+  @media (min-width: 1025px) {
+    font-size: 1.3rem;
+  }
 }
 .line-height-l {
   line-height: 3.6rem;
