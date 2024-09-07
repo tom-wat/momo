@@ -33,7 +33,7 @@ main {
   background-color: hsl(45 100% 90%);
   display: grid;
   place-content: center;
-  background-image: url("/momo/images/paper.png");
+  background-image: url("/momo/images/paper.avif");
   background-size: 200px 200px;
   position: relative;
   padding: 4rem 1rem;
