@@ -3,7 +3,30 @@
 ---
 
 <div class="loading-screen"></div>
-<img class="loading-title" src="/momo/images/title-white.avif" alt="" />
+<picture class="loading-title">
+  <source
+    media="(min-width: 1025px)"
+    srcset="/momo/images/title-pc-white.avif"
+    sizes="100vw"
+    type="image/avif"
+  />
+  <source
+    media="(min-width: 768px)"
+    srcset="/momo/images/title-tab-white.avif"
+    type="image/avif"
+  />
+  <source
+    media="(max-width: 767px)"
+    srcset="/momo/images/title-sp-white.avif"
+    type="image/avif"
+  />
+  <img
+    src="/momo/images/title-pc-white.avif"
+    alt="タイトル、モモ"
+    width="3832"
+    height="740"
+  />
+</picture>
 
 <style>
   .loading-screen {
@@ -22,9 +45,10 @@
     transform: translateY(-100%);
   }
 
-  .loading-title {
+  /* .loading-title img {
     position: fixed;
     width: 96%;
+    height: auto;
     z-index: 20;
     top: 54%;
     left: 50%;
@@ -32,6 +56,28 @@
     transition: opacity 0.5s;
     &.loaded {
       opacity: 0;
+    }
+  } */
+  .loading-title {
+    &.loaded img {
+      opacity: 0;
+    }
+    & img {
+      position: fixed;
+      width: 96%;
+      height: auto;
+      z-index: 20;
+      bottom: 15%;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      transition: opacity 0.5s;
+      @media (min-width: 768px) {
+        bottom: 5%;
+      }
+      @media (min-width: 1025px) {
+        top: 54%;
+        transform: translate(-50%, -50%);
+      }
     }
   }
 </style>
