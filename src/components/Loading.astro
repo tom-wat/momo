@@ -10,7 +10,12 @@
     type="image/avif"
   />
   <source
-    media="(min-width: 768px)"
+    media="(min-width: 768px) and (max-width: 1024px) and (orientation: landscape)"
+    srcset="/momo/images/title-pc-white.avif"
+    type="image/avif"
+  />
+  <source
+    media="(min-width: 768px) and (max-width: 1024px) and (orientation: portrait)"
     srcset="/momo/images/title-tab-white.avif"
     type="image/avif"
     width="1651"
@@ -61,8 +66,12 @@
       left: 50%;
       transform: translate(-50%, 0%);
       transition: opacity 0.5s;
-      @media (min-width: 768px) {
+      @media (min-width: 768px) and (orientation: portrait) {
         bottom: 5%;
+      }
+      @media (min-width: 768px) and (orientation: landscape) {
+        top: 54%;
+        transform: translate(-50%, -50%);
       }
       @media (min-width: 1025px) {
         top: 54%;
