@@ -25,6 +25,9 @@
   box-sizing: border-box;
   text-decoration: none;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   overflow: hidden;
   font-family: "shippori mincho b1", serif;
@@ -49,6 +52,9 @@ main {
 }
 img {
   vertical-align: bottom;
+}
+a {
+  color: var(--color-dark);
 }
 h1 {
   position: absolute;
@@ -109,25 +115,7 @@ footer {
   place-content: center;
   margin-block: 12rem;
 }
-a {
-  font-size: 1.2rem;
-  font-family: "shippori mincho b1", serif;
-  background-color: transparent;
-  border: 1px solid var(--color-dark);
-  outline: none;
-  box-shadow: none;
-  border-radius: 5rem;
-  display: inline-block;
-  padding: 1rem 1.5rem;
-  color: black;
-  transition: color 0.2s, background-color 0.2s;
-  @media (any-hover: hover) {
-    &:hover {
-      color: var(--color-light);
-      background-color: var(--color-dark);
-    }
-  }
-}
+
 .margin-inline-auto {
   margin-inline: auto;
 }
