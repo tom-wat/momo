@@ -5,14 +5,14 @@
 }
 /* @font-face {
   font-family: "shippori mincho b1";
-  src: url("/momo/fonts/shippori-mincho-b1-v22-japanese_latin-500.woff2")
+  src: url("/fonts/shippori-mincho-b1-v22-japanese_latin-500.woff2")
     format("woff2");
   font-weight: 500;
   font-display: swap;
 } */
 @font-face {
   font-family: "shippori mincho b1";
-  src: url("/momo/fonts/shippori-mincho-b1-500-subset.woff2") format("woff2");
+  src: url("/fonts/shippori-mincho-b1-500-subset.woff2") format("woff2");
   font-weight: 500;
   font-display: swap;
 }
@@ -36,7 +36,7 @@ main {
   background-color: hsl(45 100% 90%);
   display: grid;
   place-content: center;
-  background-image: url("/momo/images/paper.avif");
+  background-image: url("/images/paper.avif");
   background-size: 200px 200px;
   position: relative;
   padding: 4rem 1rem;
