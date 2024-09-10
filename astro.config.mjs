@@ -1,6 +1,6 @@
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: "https://tom-wat.github.io/",
-  base: "/momo",
+  site: "https://momo-f1bcz6tij-wats-projects-297db0f9.vercel.app/",
+  base: "/",
 });
